@@ -34,3 +34,38 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/KeyValue"
+
+components:
+  schemas:
+    Key:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: "my-uuid"
+    Status:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "read"
+    KeyValue:
+      type: object
+      required:
+        - title
+        - author
+        - status
+      properties:
+        title:
+          type: string
+          example: "my-title"
+        author:
+          type: string
+          example: "my-author"
+        status:
+          type: string
+          example: "read"
+    StringArray:
+      type: array
+      items:
+        type: string
