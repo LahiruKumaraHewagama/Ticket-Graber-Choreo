@@ -31,4 +31,28 @@ const sync_user= async (email, Data) => {
     };
 
 
-export default { sync_user };
+    // Define service functions for updating the database
+const get_all_user= async () => {
+    try {
+        // Check if a user with the same email already exists
+        const querySnapshot = await firebase.admin.firestore().collection('users').get();
+
+        let users;
+        if (!querySnapshot.empty) {
+            console.log('User with the same email already exists.');
+            // If user already exists, fetch the first user document from the query snapshot
+            users = querySnapshot.docs[0].data();
+        } else {
+            users = null;
+        }
+
+        console.log('User sync successfully:', users);
+        return users;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+};
+
+
+export default { sync_user, get_all_user };

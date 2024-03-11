@@ -13,4 +13,13 @@ const sync_user = async (req, res) => {
   }
 };
 
-export default { sync_user };
+const get_all_user = async (req, res) => {
+  try {
+    const users = await UserService.get_all_user();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+export default { sync_user, get_all_user };
