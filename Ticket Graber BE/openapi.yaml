@@ -29,12 +29,8 @@ paths:
           description: Invalid request body
       tags:
         - users
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/KeyValue"
-
+           
+           
 components:
   schemas:
     Key:
