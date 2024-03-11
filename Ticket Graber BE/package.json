@@ -2,7 +2,7 @@
   "name": "nodejs-sample-rest-api",
   "version": "1.0.0",
   "description": "A sample nodejs REST API - in-memory cache",
-  "main": "index.js",
+  "main": "index.mjs",
   "type": "module",
   "scripts": {
     "start": "nodemon index.mjs",
