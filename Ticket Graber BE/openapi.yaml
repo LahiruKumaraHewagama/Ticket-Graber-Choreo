@@ -14,6 +14,39 @@ externalDocs:
 servers:
   - url: http://localhost:8080
 tags:
-  - name: tickets
+  - name: user
     description: In-memory tickets list cache API
-           
+
+paths:
+  /sync_user:
+    summary: user API
+    post:
+      summary: Insert a new user
+      operationId: SetNewUser
+      responses:
+        "200":
+          description: Successful operation
+        "400":
+          description: Invalid request body
+      tags:
+        - sync_user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KeyValue"
+
+components:
+  schemas:
+    KeyValue:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+          example: "abc@gmail.com"
+    StringArray:
+      type: array
+      items:
+        type: string
