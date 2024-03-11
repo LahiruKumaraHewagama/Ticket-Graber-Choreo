@@ -1,6 +1,4 @@
 import express from "express";
-import cache from "./cache.mjs";
-import { v4 as uuidv4 } from "uuid";
 import firebase from './services/firebase.js';
 import config from './config/index.js';
 import userRoutes from './routes/user.js';
