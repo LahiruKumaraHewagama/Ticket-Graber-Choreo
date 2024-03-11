@@ -16,20 +16,6 @@ servers:
 tags:
   - name: tickets
     description: In-memory tickets list cache API
-paths:
-  /user/sync_user:
-    summary: sync user with firebase
-    post:
-      summary: sync user with firebase
-      operationId: AddNewUser
-      responses:
-        "200":
-          description: Successful operation
-        "400":
-          description: Invalid request body
-      tags:
-        - users
-           
            
 components:
   schemas:
