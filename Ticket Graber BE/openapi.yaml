@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: Ticket Graber REST Endpoint - Nodejs REST API Service
+  description: >-
+    The ticket booking system is a web application featuring a React.js frontend and Node.js backend, designed to streamline the process of booking tickets for various events or services. Users can easily navigate through available options, select their desired tickets, and make secure online payments within the system. 
+    Administrators have the capability to manage bookings, approving or rejecting them as necessary to maintain smooth operations and prevent overbooking. With its user-friendly interface and efficient administrative features, the system provides a seamless experience for both users and administrators alike.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Choreo
+  url: https://choreo.dev
+servers:
+  - url: http://localhost:8000
+tags:
+  - name: tickets
+    description: In-memory tickets list cache API
+paths:
+  /user/sync_user:
+    summary: sync user with firebase
+    post:
+      summary: sync user with firebase
+      operationId: AddNewUser
+      responses:
+        "200":
+          description: Successful operation
+        "400":
+          description: Invalid request body
+      tags:
+        - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/KeyValue"
